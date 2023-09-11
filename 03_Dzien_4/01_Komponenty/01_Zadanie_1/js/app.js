@@ -1,11 +1,16 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import { StopperWithTimer } from "./components/Stopper";
+import {createRoot} from "react-dom/client";
+
+import {Stopper, StopperWithTimer} from "./components/Stopper";
 
 const App = () => (
-  <div>
-    <StopperWithTimer>czas start</StopperWithTimer>
-  </div>
+    <div>
+        {/* <Stopper>czas start</Stopper> */}
+        <br/>
+        <StopperWithTimer>czas start</StopperWithTimer>
+    </div>
 );
 
-ReactDOM.render(<App />, document.getElementById("app"));
+const container = document.getElementById("app");
+const root = createRoot(container);
+root.render(<App/>);
