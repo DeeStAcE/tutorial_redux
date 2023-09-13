@@ -7,10 +7,10 @@ import Quote from "./containers/Quote";
 import Favourites from "./containers/Favourites";
 
 const App = () => (
-  <Provider store={store}>
-    <Quote/>
-    <Favourites/>
-  </Provider>
+    <Provider store={store}>
+        <Quote/>
+        <Favourites/>
+    </Provider>
 );
 
 ReactDOM.render(<App/>, document.getElementById("app"));
