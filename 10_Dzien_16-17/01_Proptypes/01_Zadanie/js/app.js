@@ -1,17 +1,21 @@
-import React, { Component } from "react";
-import ReactDOM from "react-dom";
+import React, {Component} from "react";
 import User from "./User";
+import {createRoot} from "react-dom/client";
 
 class App extends Component {
-  render() {
-    return (
-      <div>
-        <User firstName="Jan" lastName="Kowalski" age={44} onClick={() => {}} />
-        <hr />
-        <User firstName="Bożena" lastName="Kowalska" onClick={() => {}} />
-      </div>
-    );
-  }
+    render() {
+        return (
+            <div>
+                <User firstName="Jan" lastName="Kowalski" age={44} onClick={() => {
+                }}/>
+                <hr/>
+                <User firstName="Bożena" lastName="Kowalska" onClick={() => {
+                }}/>
+            </div>
+        );
+    }
 }
 
-ReactDOM.render(<App />, document.getElementById("root"));
+const container = document.getElementById("root");
+const root = createRoot(container);
+root.render(<App/>);

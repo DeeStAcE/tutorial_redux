@@ -12,7 +12,7 @@ function quote(state = initialState, {type, payload}) {
     switch (type) {
         case QUOTE_FETCHING: {
             return {
-                ...initialState,
+                ...state,
                 loading: true
             }
         }
@@ -20,7 +20,7 @@ function quote(state = initialState, {type, payload}) {
         case QUOTE_FETCHED: {
             return {
                 loading: false,
-                quote: payload.quote,
+                quote: payload,
                 error: null
             }
         }
@@ -29,7 +29,7 @@ function quote(state = initialState, {type, payload}) {
             return {
                 loading: false,
                 quote: [],
-                error: payload.error
+                error: payload
             }
         }
 
