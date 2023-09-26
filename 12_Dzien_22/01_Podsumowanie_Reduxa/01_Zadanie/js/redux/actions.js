@@ -1,6 +1,7 @@
 export const PAUSE = 'PAUSE';
 export const INCREASE = 'INCREASE';
 export const SAVE = 'SAVE';
+export const DELETE = "DELETE"
 
 let interval;
 
@@ -26,5 +27,10 @@ export const increase = () => ({
 
 export const save = (payload) => ({
     type: SAVE,
+    payload,
+});
+
+export const deleteObject = (payload) => ({
+    type: DELETE,
     payload,
 });
