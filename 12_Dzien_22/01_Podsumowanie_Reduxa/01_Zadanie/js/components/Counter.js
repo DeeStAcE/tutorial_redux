@@ -1,6 +1,10 @@
-import React from "react";
+import React, {useEffect} from "react";
 
-const Counter = ({counter, isCounting, onStartCounter, onPause}) => {
+const Counter = ({counter, isCounting, initCounter, onStartCounter, onPause, onSetValue}) => {
+
+    useEffect(() => {
+        onSetValue(initCounter || counter)
+    }, []);
 
     const handleStart = () => {
         onStartCounter()

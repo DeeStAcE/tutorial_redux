@@ -1,6 +1,5 @@
 import {combineReducers} from "redux";
-
-import {PAUSE, INCREASE, SAVE, DELETE} from "./actions";
+import {PAUSE, INCREASE, SAVE, DELETE, SET} from "./actions";
 
 const initialState = {
     "isCounting": false,
@@ -15,6 +14,9 @@ const counter = (state = initialState, {type, payload}) => {
         case PAUSE: {
             return {...state, isCounting: false}
         }
+        case SET: {
+            return {...state, value: payload}
+        }
         default: {
             return state
         }
@@ -27,10 +29,7 @@ const list = (state = [], {type, payload}) => {
             return [...state, payload]
         }
         case DELETE: {
-            console.log(payload)
-            console.log(state)
             state.splice(payload, 1)
-            console.log(state)
             return [...state]
         }
         default: {

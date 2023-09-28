@@ -11,12 +11,22 @@ import Counter from '../containers/Counter'
 import List from '../containers/List'
 import store from '../redux/store'
 
+
+const NewCounter = () => {
+    const {initCounter} = useParams()
+
+    return <Counter initCounter={parseInt(initCounter)}/>
+}
+
 const Main = () => {
     return (
         <>
             <Provider store={store}>
                 <Router>
-                    <Counter/>
+                    <Routes>
+                        <Route path="" element={<Counter/>}/>
+                        <Route path="/:initCounter/" element={<NewCounter/>}/>
+                    </Routes>
                     <List/>
                 </Router>
             </Provider>
